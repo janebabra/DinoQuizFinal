@@ -9,44 +9,37 @@ import android.widget.Toast;
 
 
 public class QuizActivity extends ActionBarActivity {
+    TextView mQuestionTextView;
+    int mCurrentIndex;
+    TrueFalse[] mAnswerKey = new TrueFalse[]{
+            new TrueFalse(R.string.question_birds, true),
+            new TrueFalse(R.string.question_jurassic, false),
+            new TrueFalse(R.string.question_nessi, false),
+            new TrueFalse(R.string.question_veggi, false),
+            new TrueFalse(R.string.question_biggest, false)
+    };
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mNextButton;
     private Button mPrevButton;
 
-    TextView mQuestionTextView;
-
-
-    int mCurrentIndex;
-
     private void updateQuestion() {
-    int question = mAnswerKey[mCurrentIndex].getQuestion();
-     // int question = mQuestionBank[mCurrentIndex].getQuestion();
+        int question = mAnswerKey[mCurrentIndex].getQuestion();
+        // int question = mQuestionBank[mCurrentIndex].getQuestion();
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
         mQuestionTextView.setText(question);
     }
 
-
-    TrueFalse[] mAnswerKey = new TrueFalse[] {
-    new TrueFalse(R.string.question_birds, true),
-    new TrueFalse(R.string.question_jurassic, false),
-    new TrueFalse(R.string.question_nessi, false),
-    new TrueFalse(R.string.question_veggi, false),
-    new TrueFalse(R.string.question_biggest, false)
-    };
-
     private void checkAnswer(boolean userPressedTrue) {
-    boolean answerIsTrue = mAnswerKey[mCurrentIndex].isTrueQuestion();
+        boolean answerIsTrue = mAnswerKey[mCurrentIndex].isTrueQuestion();
         int messageResId;
-        if(userPressedTrue == answerIsTrue) {
-            messageResId =R.string.correct_toast;
+        if (userPressedTrue == answerIsTrue) {
+            messageResId = R.string.correct_toast;
         } else {
             messageResId = R.string.incorrect_toast;
         }
         Toast.makeText(this, messageResId, Toast.LENGTH_LONG).show();
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,18 +70,16 @@ public class QuizActivity extends ActionBarActivity {
             }
         });
 
-        mPrevButton = (Button)findViewById(R.id.prev_button);
+        mPrevButton = (Button) findViewById(R.id.prev_button);
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Alternative zur Buchlösung
-                mCurrentIndex = (mCurrentIndex + (mAnswerKey.length - 1) ) % mAnswerKey.length;
+                mCurrentIndex = (mCurrentIndex + (mAnswerKey.length - 1)) % mAnswerKey.length;
                 updateQuestion();
 
             }
         });
-
-
 
 
     }
