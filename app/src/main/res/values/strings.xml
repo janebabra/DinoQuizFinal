@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DinoQuizFinal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="question_birds">Sind die Vögel die nächsten Verwandten der Dinosauier?</string>
+    <string name="question_nessi">Der letzte noch lebende Dinosaurier ist das Seeungeheuer Nessi</string>
+    <string name="question_jurassic">Der Jurassic Park ist ein Reservart für Dinosaurier</string>
+    <string name="question_veggi">Alle Dinosaurier waren Vegetarier</string>
+    <string name="question_biggest">Rex war der grösste Dinosaurier</string>
+
+    <string name="true_button">Richtig</string>
+    <string name="false_button">Falsch</string>
+    <string name="next_button">Weiter</string>
+
+    <string name="who_knows">Wer weiss die Antwort?</string>
+    <string name="correct_toast">Das ist richtig!</string>
+    <string name="incorrect_toast">Leider falsch!</string>
+    <string name="title_activity_true_false">TrueFalse</string>
+    <string name="prev_button">Zurück</string>
+
+</resources>
